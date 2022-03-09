@@ -8,7 +8,7 @@ const emailAutorizzate = ["joe@gmail.com", "marco@gmail.com", "attila@libero.it"
 
 let inputUtente = document.getElementById('input-utente');
 let logInButton = document.getElementById('accedi');
-let validator = 'Email non corretta';
+let validator = true;
 const pValidator = document.querySelector('#validator');
 
 //controllo autorizzazione 
@@ -18,11 +18,11 @@ logInButton.addEventListener('click', function(){
     console.log(emailUtente);
     for (let i = 0; i < emailAutorizzate.length; i++) {
         if (emailUtente === emailAutorizzate[i]) {
-            validator = 'E-mail valida';  
-            pValidator.append(validator);      
+            validator = false;  
+            pValidator.append("Email corretta");      
         }
     }
-    pValidator.append(validator);
+    pValidator.append("Email non corretta");
 
 });
 
