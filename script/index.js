@@ -40,3 +40,15 @@ let dadoComputer = Math.floor(Math.random() * 6) + 1;
 
 console.log(`Il tuo dado: ${dadoGiocatore}`);
 console.log(`Il dado avversario: ${dadoComputer}`);
+
+
+//dichiara il vincitore con if
+
+if (dadoGiocatore > dadoComputer) {
+    console.log("Hai vinto");
+} else if (dadoGiocatore < dadoComputer) {
+    console.log('Hai perso');
+} else {
+    console.log('Pareggio!');
+
+}
