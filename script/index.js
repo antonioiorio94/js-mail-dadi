@@ -2,29 +2,33 @@
 
 //creazione array con em-mail autorizzate;
 
-let emailAutorizzate = ["joe@gmail.com", "marco@gmail.com", "attila@libero.it"];
+const emailAutorizzate = ["joe@gmail.com", "marco@gmail.com", "attila@libero.it"];
 
 //Chiedi l'e-mail all'utente
 
-const inputUtente = document.getElementById('input-utente');
-const logInButton = document.getElementById('accedi');
+let inputUtente = document.getElementById('input-utente');
+let logInButton = document.getElementById('accedi');
+let validator = 'Email non corretta';
+const pValidator = document.querySelector('#validator');
+
+//controllo autorizzazione 
 
 logInButton.addEventListener('click', function(){
-    console.log('accedi');
     let emailUtente = inputUtente.value;
     console.log(emailUtente);
+    for (let i = 0; i < emailAutorizzate.length; i++) {
+        if (emailUtente === emailAutorizzate[i]) {
+            validator = 'E-mail valida';  
+            pValidator.append(validator);      
+        }
+    }
+    pValidator.append(validator);
 
 });
 
 
 
-//controllo autorizzazione 
 
-for (let i = 0; i < emailAutorizzate.lenght; i++) {
-    if (emailUtente === emailAutorizzate[i]) {
-        console.log('E-mail valida');
-    }else{
-        console.log('E-mail non valida');
-    }
-}
+
+
 
