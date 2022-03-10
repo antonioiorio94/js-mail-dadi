@@ -19,12 +19,18 @@ logInButton.addEventListener('click', function(){
     for (let i = 0; i < emailAutorizzate.length; i++) {
         if (emailUtente === emailAutorizzate[i]) {
             validator = false;  
-            pValidator.append("Email corretta");      
+                  
         }
     }
-    pValidator.append("Email non corretta");
+    
+    if (validator){
+        pValidator.append("Email non corretta");
+    }else{
+        pValidator.append("Email corretta");
+    }
 
 });
+
 
 
 
